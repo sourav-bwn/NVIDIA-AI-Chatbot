@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { Message } from "./Message";
-import { InputBox } from "./InputBox";
+import { Message } from "./Message.jsx";
+import { InputBox } from "./InputBox.jsx";
 import "./ChatInterface.css";
 
 export function ChatInterface({ messages, onSend, isLoading, onClear }) {

@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import axios from "axios";
-import { API_ENDPOINTS, SYSTEM_PROMPT, DEFAULT_MODEL } from "./config";
+import { API_ENDPOINTS, SYSTEM_PROMPT, DEFAULT_MODEL } from "../config.js";
 
 export function useChat() {
   const [messages, setMessages] = useState([]);

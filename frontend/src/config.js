@@ -1,5 +1,5 @@
 const BACKEND_URL =
-  process.env.REACT_APP_BACKEND_URL || "http://localhost:8000";
+  import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
 export const API_ENDPOINTS = {
   CHAT: `${BACKEND_URL}/api/chat`,
