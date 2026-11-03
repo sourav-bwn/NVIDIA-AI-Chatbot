@@ -61,7 +61,7 @@ async def chat(request: ChatRequest):
         "model": request.model or MODEL_NAME,
         "messages": [msg.model_dump() for msg in request.messages],
         "max_tokens": request.max_tokens or MAX_TOKENS,
-        "temperature": request.temperature or TEMPERATURE,
+        "temperature": request.temperature if request.temperature is not None else TEMPERATURE,
     }
 
     async with httpx.AsyncClient(timeout=60.0) as client:
@@ -102,7 +102,7 @@ async def chat_stream(request: ChatRequest):
         "model": request.model or MODEL_NAME,
         "messages": [msg.model_dump() for msg in request.messages],
         "max_tokens": request.max_tokens or MAX_TOKENS,
-        "temperature": request.temperature or TEMPERATURE,
+        "temperature": request.temperature if request.temperature is not None else TEMPERATURE,
         "stream": True,
     }
 
